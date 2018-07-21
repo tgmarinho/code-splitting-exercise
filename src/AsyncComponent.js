@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Loadale from 'react-loadable'
 
 export default function asyncComponent(importComponent) {
   class AsyncComponent extends Component {
