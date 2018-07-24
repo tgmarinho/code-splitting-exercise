@@ -1,35 +1,24 @@
 import React, { Component } from 'react';
 import './App.css';
-import LoadableFlex from './LoadableFlex'
+import Loadable from 'react-loadable'
+import withLoadable from './LoadableFlex'
 
 class App extends Component {
 
-
   state = {
-    route: 'Page1',
-    component: null
+    route: 'Page1'
   }
-
 
   onRouteChange = (route) => {
 
-    this.setState({ route }, () => {
-      this.setState({
-        component: LoadableFlex(this.state.route)
-      }
-      )
-    })
+    this.setState({ route })
 
-  }
-
-  componentWillMount() {
-    this.setState({
-      component: LoadableFlex(this.state.route)
-    })
   }
 
   render() {
-    return <this.state.component onRouteChange={this.onRouteChange} />
+
+    const LoadableFlex = withLoadable(this.state.route)
+    return <LoadableFlex onRouteChange={this.onRouteChange} />
   }
 }
 
