@@ -4,23 +4,21 @@ import LoadableFlex from './LoadableFlex'
 
 class App extends Component {
 
-  constructor() {
-    super();
-    this.state = {
-      route: 'Page1',
-      component: null
-    }
+
+  state = {
+    route: 'Page1',
+    component: null
   }
+
 
   onRouteChange = (route) => {
 
-    this.setState({ route });
-
-    this.setState({}, () => {
+    this.setState({ route }, () => {
       this.setState({
         component: LoadableFlex(this.state.route)
       }
-    )})
+      )
+    })
 
   }
 
