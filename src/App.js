@@ -16,8 +16,8 @@ class App extends Component {
 
   render() {
 
-    const LoadableFlex = withLoadable(this.state.route)
-    return <LoadableFlex onRouteChange={this.onRouteChange} />
+    const SplittingCode = withLoadable(this.state.route)
+    return <SplittingCode onRouteChange={this.onRouteChange} />
   }
 }
 
