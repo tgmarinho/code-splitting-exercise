@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import Loadable from 'react-loadable'
 import withLoadable from './LoadableFlex'
 
 class App extends Component {
@@ -10,9 +9,9 @@ class App extends Component {
   }
 
   onRouteChange = (route) => {
-
+   
     this.setState({ route })
-
+    
   }
 
   render() {
